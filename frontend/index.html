@@ -3,28 +3,67 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Student Grievance System</title>
+  <title>Grievance Management System</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <div class="container">
     <h1>Grievance Management System</h1>
 
-    <div id="login">
-      <h2>Student Login</h2>
+    <!-- Student Login -->
+    <div id="login" style="display: block;">
+      <h2>Login</h2>
       <form id="loginForm">
+        <select id="role">
+          <option value="student">Student</option>
+          <option value="admin">Admin</option>
+          <option value="hod">HOD</option>
+        </select>
         <input type="email" id="email" placeholder="Email" required />
         <input type="password" id="password" placeholder="Password" required />
         <button type="submit">Login</button>
       </form>
     </div>
 
+    <!-- Student Grievance Form -->
     <div id="grievanceForm" style="display: none;">
       <h2>Apply Grievance</h2>
       <form id="grievanceFormSubmit">
         <input type="text" id="subject" placeholder="Subject" required />
         <button type="submit">Submit Grievance</button>
       </form>
+    </div>
+
+    <!-- Admin Section -->
+    <div id="adminPanel" style="display: none;">
+      <h2>Admin Panel</h2>
+      <table id="adminTable">
+        <thead>
+          <tr>
+            <th>Grievance ID</th>
+            <th>Student ID</th>
+            <th>Subject</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <!-- HOD Section -->
+    <div id="hodPanel" style="display: none;">
+      <h2>HOD Panel</h2>
+      <table id="hodTable">
+        <thead>
+          <tr>
+            <th>Grievance ID</th>
+            <th>Student ID</th>
+            <th>Subject</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
     </div>
   </div>
   <script src="app.js"></script>
